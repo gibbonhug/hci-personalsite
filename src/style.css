@@ -72,9 +72,13 @@ table {
   font-family: "Magic", "Arial";
   display: grid;
   grid-template-columns: 1fr 1fr;
+  grid-template-rows: 95vh 5vh;
 }
 #journal .journal-entry {
   padding: 2.5rem;
+}
+#journal .temp {
+  text-align: center;
 }
 
 #app-wrapper {

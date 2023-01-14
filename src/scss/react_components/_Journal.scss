@@ -23,9 +23,15 @@
     // Display 2 entries in a grid
     display: grid;
     grid-template-columns: 1fr 1fr;
+    grid-template-rows: 95vh 5vh;
+
     // Temporary, move this
     .journal-entry {
         padding: 2.5rem;
+    }
+    // Prev and next buttons
+    .temp {
+        text-align: center;
     }
 
 }
