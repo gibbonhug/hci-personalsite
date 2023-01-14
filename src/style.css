@@ -56,7 +56,7 @@ table {
 
 @font-face {
   font-family: "Magic";
-  src: url("/src/assets/MagicCardsNormal.ttf");
+  src: url("/src/assets/MAGIC.TTF");
 }
 #journal {
   position: absolute;
