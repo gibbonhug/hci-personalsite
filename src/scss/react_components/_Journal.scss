@@ -19,7 +19,13 @@
 
     // Morrowind journal font
     font-family: 'Magic', 'Arial';
-    
-    
+
+    // Display 2 entries in a grid
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    // Temporary, move this
+    .journal-entry {
+        padding: 2.5rem;
+    }
 
 }
