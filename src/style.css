@@ -78,6 +78,12 @@ table {
   font-size: 3.5rem;
   padding-top: 5vh;
 }
+#journal .journal-entry h2 {
+  color: hsl(0deg, 100%, 37%);
+}
+#journal .journal-entry span {
+  color: hsl(250deg, 100%, 37%);
+}
 #journal #journal-entry-left {
   padding-left: 10vh;
   padding-right: 4vh;
@@ -90,9 +96,6 @@ table {
   font-size: 3.5rem;
   text-align: center;
   cursor: pointer;
-}
-#journal span {
-  color: hwb(250 0% 25%);
 }
 
 #app-wrapper {
