@@ -1,5 +1,5 @@
 export default function Journal() {
     return (
-        <div id="journal">Hello Journal Component</div>
+        <div id="journal">Journal Component Text</div>
     )
 }

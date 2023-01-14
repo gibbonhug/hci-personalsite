@@ -54,8 +54,22 @@ table {
   border-spacing: 0;
 }
 
+@font-face {
+  font-family: "Magic";
+  src: url("/src/assets/MagicCardsNormal.ttf");
+}
 #journal {
-  background-color: beige;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: yellow;
+  background-image: url("/src/assets/journal.png");
+  background-repeat: no-repeat;
+  background-position-x: center;
+  background-position-y: top;
+  font-family: "Magic", "Arial";
 }
 
 /*# sourceMappingURL=style.css.map */
