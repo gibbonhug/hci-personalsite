@@ -1,13 +1,13 @@
-import audio from '../assets/turn.mp3';
+import turnAudio from '../assets/turn.mp3';
 
 export default function Prev() {
-    const aud_obj = new Audio(audio);
+    const turnAudioObject = new Audio(turnAudio);
 
-    const play = () => {
-        aud_obj.play();
+    const playAudio = () => {
+        turnAudioObject.play();
     }
 
     return (
-        <div className="temp" onClick={play}>Prev</div>
+        <div className="temp" onClick={playAudio}>Prev</div>
     )
 }
