@@ -1,12 +1,14 @@
 import JournalEntry from "./JournalEntry";
+import Prev from "./Prev";
+import Next from "./Next";
 
 export default function Journal() {
     return (
         <div id="journal">
             <JournalEntry></JournalEntry>
             <JournalEntry></JournalEntry>
-            <div className="temp">Prev</div>
-            <div className="temp">Next</div>
+            <Prev></Prev>
+            <Next></Next>
         </div>
     )
 }
