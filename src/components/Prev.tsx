@@ -1,8 +1,10 @@
+import audio from '../assets/turn.mp3';
+
 export default function Prev() {
-    const prevSound = new Audio("/turn.mp3")
+    const aud_obj = new Audio(audio)
 
     const play = () => {
-        prevSound.play()
+        aud_obj.play()
     }
 
     return (
