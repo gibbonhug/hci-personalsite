@@ -6,6 +6,25 @@ import { useState } from "react";
 export default function Journal() {
     const [curPage, setCurPage] = useState(0);
 
+    /**
+     * Function to be called when we click Prev or Next button on the Journal
+     * @param direction: Whether we are turning to prev page (false) or next page (true)
+     * @returns void
+     */
+    const updatePage = (direction: boolean) => {
+        // Do not turn backwards if we are on the 0th page
+        if (curPage == 0 && direction == false) {
+            return;
+        }
+
+        // Do not turn forwards if we are on the last page
+        if (curPage >= Math.ceil(entries.length / 2) && direction == true) {
+            return;
+        }
+        
+        // REMAINING LOGIC
+    }
+
     const entries = [
         {
             title: "16 Last Seed (Day 1)",
@@ -35,8 +54,8 @@ export default function Journal() {
 
     return (
         <div id="journal">
-            <JournalEntry id={"journal-entry-left"} content={entries[0]}></JournalEntry>
-            <JournalEntry id={"journal-entry-right"} content={entries[1]}></JournalEntry>
+            <JournalEntry id={"journal-entry-left"} content={entries[curPage]}></JournalEntry>
+            <JournalEntry id={"journal-entry-right"} content={entries[curPage+1]}></JournalEntry>
             <Prev></Prev>
             <Next></Next>
         </div>
