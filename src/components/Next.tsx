@@ -1,6 +1,15 @@
 import turnAudio from '../assets/turn.mp3';
 
-export default function Next() {
+interface NextProps {
+    updatePage: Function;
+}
+
+export default function Next(props: NextProps) {
+    const onClick = () => {
+        playAudio();
+        props.updatePage(false);
+    }
+
     const turnAudioObject = new Audio(turnAudio);
 
     const playAudio = () => {
@@ -12,6 +21,6 @@ export default function Next() {
     }
 
     return (
-        <div className="temp" onClick={playAudio}><span>Next</span></div>
+        <div className="temp" onClick={onClick}><span>Next</span></div>
     )
 }

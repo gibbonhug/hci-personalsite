@@ -56,8 +56,8 @@ export default function Journal() {
         <div id="journal">
             <JournalEntry id={"journal-entry-left"} content={entries[curPage]}></JournalEntry>
             <JournalEntry id={"journal-entry-right"} content={entries[curPage+1]}></JournalEntry>
-            <Prev></Prev>
-            <Next></Next>
+            <Prev updatePage={updatePage}></Prev>
+            <Next updatePage={updatePage}></Next>
         </div>
     )
 }
