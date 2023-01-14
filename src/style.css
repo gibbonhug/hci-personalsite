@@ -75,11 +75,20 @@ table {
   grid-template-rows: 95vh 5vh;
 }
 #journal .journal-entry {
-  padding: 3rem;
+  font-size: 2.25rem;
+  padding-top: 5vh;
+}
+#journal #journal-entry-left {
+  padding-left: 10vh;
+  padding-right: 4vh;
+}
+#journal #journal-entry-right {
+  padding-left: 4vh;
+  padding-right: 10vh;
 }
 #journal .temp {
+  font-size: 3rem;
   text-align: center;
-  font-size: 1.5rem;
   cursor: pointer;
 }
 #journal span {

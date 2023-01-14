@@ -5,8 +5,8 @@ import Next from "./Next";
 export default function Journal() {
     return (
         <div id="journal">
-            <JournalEntry></JournalEntry>
-            <JournalEntry></JournalEntry>
+            <JournalEntry id={"journal-entry-left"}></JournalEntry>
+            <JournalEntry id={"journal-entry-right"}></JournalEntry>
             <Prev></Prev>
             <Next></Next>
         </div>

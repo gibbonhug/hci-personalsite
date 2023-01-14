@@ -3,6 +3,7 @@
     src: url('/src/assets/MAGIC.TTF');
 }
 
+// Journal and all child components
 #journal {
     // Journal fill exactly height of vh, and remain in place
     position: fixed;
@@ -25,14 +26,26 @@
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 95vh 5vh;
 
-    // Temporary, move this
+    // Paddings are genuinely grotesque but get job done (since journal bg is in vh unit)
     .journal-entry {
-        padding: 3rem;
+        font-size: 2.25rem;
+        padding-top: 5vh;
     }
+
+    #journal-entry-left {
+        padding-left: 10vh;
+        padding-right: 4vh;
+    }
+
+    #journal-entry-right {
+        padding-left: 4vh;
+        padding-right: 10vh;
+    }
+
     // Prev and next buttons
     .temp {
+        font-size: 3rem;
         text-align: center;
-        font-size: 1.5rem;
         cursor: pointer;
     }
 
