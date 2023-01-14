@@ -7,7 +7,7 @@ interface NextProps {
 export default function Next(props: NextProps) {
     const onClick = () => {
         playAudio();
-        props.updatePage(false);
+        props.updatePage(true);
     }
 
     const turnAudioObject = new Audio(turnAudio);

@@ -21,10 +21,22 @@ export default function Journal() {
         if (curPage >= Math.ceil(entries.length / 2) && direction == true) {
             return;
         }
-        
-        // REMAINING LOGIC
+
+        /*
+            Since there are 2 "entries" per "page turn" (left and right),
+            I think it's easiest to "turn pages" 2 at a time, easily associating curPage and the entries array
+        */
+        if (direction == true) {
+            setCurPage(curPage + 2);
+        } else {
+            setCurPage(curPage - 2);
+        }
+
+        return;
     }
 
+    // Add new entries to morrowind journal here
+    // Remember to wrap each body in a <p> tag
     const entries = [
         {
             title: "16 Last Seed (Day 1)",
