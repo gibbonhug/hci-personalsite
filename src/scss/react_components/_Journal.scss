@@ -32,6 +32,13 @@
     // Prev and next buttons
     .temp {
         text-align: center;
+        font-size: 1.5rem;
+        cursor: pointer;
+    }
+
+    // Span tags: red
+    span {
+        color: hwb(0 0% 50%);
     }
 
 }

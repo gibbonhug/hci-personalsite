@@ -12,6 +12,6 @@ export default function Prev() {
     }
 
     return (
-        <div className="temp" onClick={playAudio}>Prev</div>
+        <div className="temp" onClick={playAudio}><span>Prev</span></div>
     )
 }

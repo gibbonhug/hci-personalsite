@@ -79,6 +79,11 @@ table {
 }
 #journal .temp {
   text-align: center;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+#journal span {
+  color: hwb(0 0% 50%);
 }
 
 #app-wrapper {

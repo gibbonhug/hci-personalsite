@@ -12,6 +12,6 @@ export default function Next() {
     }
 
     return (
-        <div className="temp" onClick={playAudio}>Next</div>
+        <div className="temp" onClick={playAudio}><span>Next</span></div>
     )
 }
