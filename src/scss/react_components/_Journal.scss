@@ -21,7 +21,7 @@
     // Morrowind journal font
     font-family: 'Magic', 'Arial';
 
-    // Display 2 entries in a grid
+    // Display 2 entries, and prev&next, in a grid
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 95vh 5vh;
