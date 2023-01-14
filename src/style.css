@@ -75,7 +75,7 @@ table {
   grid-template-rows: 95vh 5vh;
 }
 #journal .journal-entry {
-  padding: 2.5rem;
+  padding: 3rem;
 }
 #journal .temp {
   text-align: center;
