@@ -16,7 +16,7 @@ export default function Journal() {
         {
             title: "16 Last Seed (Day 1)",
             body: <p>
-            I have met a Bosmer named <span>Fargoth</span> who claims to <span>Imperial</span>s have stolen a <span>ring</span> of his. He would like it back.
+            I have met a Bosmer named <span>Fargoth</span> who claims the <span>Imperial</span>s have stolen a <span>ring</span> of his. He would like it back.
             </p>
         },
         {
