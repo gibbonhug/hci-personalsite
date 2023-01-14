@@ -75,7 +75,7 @@ table {
   grid-template-rows: 95vh 5vh;
 }
 #journal .journal-entry {
-  font-size: 2.25rem;
+  font-size: 3.5rem;
   padding-top: 5vh;
 }
 #journal #journal-entry-left {
@@ -87,7 +87,7 @@ table {
   padding-right: 10vh;
 }
 #journal .temp {
-  font-size: 3rem;
+  font-size: 3.5rem;
   text-align: center;
   cursor: pointer;
 }
