@@ -92,7 +92,7 @@ table {
   cursor: pointer;
 }
 #journal span {
-  color: hwb(0 0% 50%);
+  color: hwb(250 0% 25%);
 }
 
 #app-wrapper {
