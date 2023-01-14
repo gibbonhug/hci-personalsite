@@ -9,7 +9,6 @@ const root = ReactDOM.createRoot(
 
 root.render(
   <React.StrictMode>
-    Hello, Human Computer Interaction
     <Journal></Journal>
   </React.StrictMode>
 );

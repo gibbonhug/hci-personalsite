@@ -4,18 +4,22 @@
 }
 
 #journal {
-    // Center background
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 100%;
-    background-color: yellow;
+    // Journal fill exactly height of vh, and remain in place
+    position: fixed;
+    height: 100vh;
+    width: 147vh; // Calculated from journal.png aspect ratio
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    // BG image size == journal div size
     background-image: url('/src/assets/journal.png');
+    background-color: beige;
     background-repeat: no-repeat;
-    background-position-x: center;
-    background-position-y: top;
+    background-size: contain;
 
     // Morrowind journal font
     font-family: 'Magic', 'Arial';
+    
+    
+
 }
