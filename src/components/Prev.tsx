@@ -1,5 +1,5 @@
 export default function Prev() {
-    const prevSound = new Audio("/assets/turn.wav")
+    const prevSound = new Audio("/turn.mp3")
 
     const play = () => {
         prevSound.play()
