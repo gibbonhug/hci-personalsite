@@ -1,5 +1,10 @@
+import JournalEntry from "./JournalEntry";
+
 export default function Journal() {
     return (
-        <div id="journal">Journal Component Text</div>
+        <div id="journal">
+            <JournalEntry></JournalEntry>
+            <JournalEntry></JournalEntry>
+        </div>
     )
 }
