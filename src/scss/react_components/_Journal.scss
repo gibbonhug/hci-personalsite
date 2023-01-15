@@ -1,7 +1,3 @@
-@font-face {
-    font-family: 'Magic';
-    src: url('/src/assets/MAGIC.TTF');
-}
 
 // Journal and all child components
 #journal {
@@ -17,9 +13,6 @@
     background-color: hsl(0, 100%, 17%);
     background-repeat: no-repeat;
     background-size: contain;
-
-    // Morrowind journal font
-    font-family: 'Magic', 'Arial';
 
     // Display 2 entries, and prev&next, in a grid
     display: grid;

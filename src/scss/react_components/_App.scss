@@ -1,3 +1,8 @@
+@font-face {
+    font-family: 'Magic';
+    src: url('/src/assets/MAGIC.TTF');
+}
+
 #app-wrapper {
     height: 100vh;
     background-image: url('/src/assets/Seyda_Neen_-_Morrowind.webp');
@@ -5,6 +10,9 @@
     background-size: cover;
     background-repeat: no-repeat;
     cursor: url('/src/assets/cursor.png'), auto;
+
+    // Morrowind journal font
+    font-family: 'Magic', 'Arial';
 
     .temp {
         font-size: 5rem;
