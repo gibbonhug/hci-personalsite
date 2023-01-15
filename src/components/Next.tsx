@@ -10,7 +10,6 @@ export default function Next(props: NextProps) {
         props.updatePageFromDirection(true);
     }
 
-
     return (
         <div className="temp" onClick={handleClick}><span>Next</span></div>
     )
