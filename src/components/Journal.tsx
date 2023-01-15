@@ -1,6 +1,5 @@
 import JournalEntry from './JournalEntry';
-import Prev from './Prev';
-import Next from './Next';
+import JournalTurnPage from './JournalTurnPage';
 import { useState } from 'react';
 import turnAudioImport from '../assets/turn.mp3';
 
@@ -173,8 +172,16 @@ export default function Journal() {
                 id={'journal-entry-right'}
                 content={entries[curPage + 1]}
             ></JournalEntry>
-            <Prev handleTurnPage={handleTurnPage}></Prev>
-            <Next handleTurnPage={handleTurnPage}></Next>
+            <JournalTurnPage
+                handleTurnPage={handleTurnPage}
+                direction={false}
+                text={'Prev'}
+            ></JournalTurnPage>
+            <JournalTurnPage
+                handleTurnPage={handleTurnPage}
+                direction={true}
+                text={'Next'}
+            ></JournalTurnPage>
         </div>
     );
 }
