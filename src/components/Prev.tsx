@@ -1,16 +1,15 @@
 interface PrevProps {
-    updatePageFromDirection: Function;
-    playAudio: Function;
-    audio: HTMLAudioElement;
+    handleTurnPage: Function;
 }
 
 export default function Prev(props: PrevProps) {
     const handleClick = () => {
-        props.playAudio(props.audio);
-        props.updatePageFromDirection(false);
-    }
+        props.handleTurnPage(false);
+    };
 
     return (
-        <div className="temp" onClick={handleClick}><span>Prev</span></div>
-    )
+        <div className="temp" onClick={handleClick}>
+            <span>Prev</span>
+        </div>
+    );
 }

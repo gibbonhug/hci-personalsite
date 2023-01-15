@@ -17,20 +17,52 @@ export default function Journal() {
     */
 
     /**
-     * Function to be called when we click Prev or Next button on the Journal
-     * @param direction: Whether we are turning to prev page (false) or next page (true)
+     * Function to call whenever do something to turn a page (next/prev, arrow key, etc)
+     *
+     * First checks if we are making a valid turn (calls isValidPageTurn)
+     *
+     * @param direction Whether we are turning to prev page (false) or next page (true)
      */
-    const updatePageFromDirection = (direction: boolean) => {
+    const handleTurnPage = (direction: boolean) => {
+        if (!isValidPageTurn(direction)) {
+            return;
+        }
+
+        // Valid turn
+        playAudio(turnAudio);
+        updatePageFromDirection(direction);
+    };
+
+    /**
+     * Function to determine whether to turn page or not.
+     *
+     * For example, do not attempt to turn the page to the previous page if we are on the first page.
+     *
+     * This logic is be used in updatePageFromDirection and playAudio.
+     * @param direction Whether we are turning to prev page (false) or next page (true)
+     */
+    const isValidPageTurn = (direction: boolean) => {
         // Do not turn backwards if we are on the 0th page
         if (curPage === 0 && direction === false) {
-            return;
+            return false;
         }
 
         // Do not turn forwards if we are on the last page
         if (curPage >= Math.ceil(entries.length / 2) && direction === true) {
-            return;
+            return false;
         }
 
+        return true;
+    };
+
+    /**
+     * Function to actually update the page
+     *
+     * Assumed the page turn is valid (only call this within turnPage function)
+     *
+     * @param direction: Whether we are turning to prev page (false) or next page (true)
+     */
+    const updatePageFromDirection = (direction: boolean) => {
         /*
             Since there are 2 "entries" per "page turn" (left and right),
             I think it's easiest to "turn pages" 2 at a time, easily associating curPage and the entries array
@@ -42,6 +74,21 @@ export default function Journal() {
         }
 
         return;
+    };
+
+    /**
+     * Function called when we turn page with keyboard or next/prev
+     *
+     * Pass in the audio to play
+     *
+     * @param audio The HTMLAudioElement (imported from mp3) to play
+     */
+    const playAudio = (audio: HTMLAudioElement) => {
+        // if it is already playing sound, stop the sound
+        audio.pause();
+        audio.currentTime = 0;
+        // play
+        audio.play();
     };
 
     // /**
@@ -71,20 +118,6 @@ export default function Journal() {
     //         window.removeEventListener('keydown', handleKeyPress);
     //     };
     // }, [curPage]);
-
-    /**
-     * Function called when we turn page with keyboard or next/prev
-     * Pass in the audio to play
-     *
-     * @param audio The HTMLAudioElement (imported from mp3) to play
-     */
-    const playAudio = (audio: HTMLAudioElement) => {
-        // if it is already playing sound, stop the sound
-        audio.pause();
-        audio.currentTime = 0;
-        // play
-        audio.play();
-    };
 
     /*
         DATA CONSTS
@@ -154,16 +187,8 @@ export default function Journal() {
                 id={'journal-entry-right'}
                 content={entries[curPage + 1]}
             ></JournalEntry>
-            <Prev
-                updatePageFromDirection={updatePageFromDirection}
-                playAudio={playAudio}
-                audio={turnAudio}
-            ></Prev>
-            <Next
-                updatePageFromDirection={updatePageFromDirection}
-                playAudio={playAudio}
-                audio={turnAudio}
-            ></Next>
+            <Prev handleTurnPage={handleTurnPage}></Prev>
+            <Next handleTurnPage={handleTurnPage}></Next>
         </div>
     );
 }

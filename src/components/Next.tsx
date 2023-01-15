@@ -1,16 +1,15 @@
 interface NextProps {
-    updatePageFromDirection: Function;
-    playAudio: Function;
-    audio: HTMLAudioElement;
+    handleTurnPage: Function;
 }
 
 export default function Next(props: NextProps) {
     const handleClick = () => {
-        props.playAudio(props.audio);
-        props.updatePageFromDirection(true);
-    }
+        props.handleTurnPage(true);
+    };
 
     return (
-        <div className="temp" onClick={handleClick}><span>Next</span></div>
-    )
+        <div className="temp" onClick={handleClick}>
+            <span>Next</span>
+        </div>
+    );
 }
