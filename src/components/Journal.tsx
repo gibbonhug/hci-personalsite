@@ -160,7 +160,7 @@ export default function Journal() {
             ),
         },
         {
-            title: '16 Last Seed (Day 1)',
+            title: '13 January (Day 1)',
             body: (
                 <p>
                     I have met a classmate named <span>Fargoth</span> who claims
