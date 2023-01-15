@@ -1,7 +1,7 @@
 import JournalEntry from './JournalEntry';
 import Prev from './Prev';
 import Next from './Next';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import turnAudioImport from '../assets/turn.mp3';
 
 export default function Journal() {
@@ -43,15 +43,19 @@ export default function Journal() {
     /**
      * Function called when user hits a key.
      * Same logic as hitting next/prev
-     * Added as an event listener on the window object.
+     * Added as an event listener on the document object.
      *
      * @param event KeyboardEvent
      */
     const handleKeyPress = (event: KeyboardEvent) => {
         if (event.key === 'ArrowLeft') {
+            console.log("you press")
+
             updatePageFromDirection(false);
             playAudio(turnAudio);
         } else if (event.key === 'ArrowRight') {
+            console.log("you press")
+
             updatePageFromDirection(true);
             playAudio(turnAudio);
         }
@@ -59,8 +63,10 @@ export default function Journal() {
         return;
     };
 
-    // accessing window is I think bad practice but this is a 1-off project
-    window.addEventListener('keydown', handleKeyPress);
+    // using useEffect to not add millions of event listeners
+    useEffect(()=>{
+        document.addEventListener('keydown', handleKeyPress); 
+    }, []);
 
     /**
      * Function called when we turn page with keyboard or next/prev
