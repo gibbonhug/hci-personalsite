@@ -96,17 +96,17 @@ table {
 #journal .temp {
   font-size: 3.5rem;
   text-align: center;
-  cursor: pointer;
   color: hsl(0deg, 100%, 37%);
   text-shadow: 10px 0px 10px hsl(0deg, 0%, 73%);
 }
 
 #app-wrapper {
   height: 100vh;
-  background-image: url(/src/assets/Seyda_Neen_-_Morrowind.webp);
+  background-image: url("/src/assets/Seyda_Neen_-_Morrowind.webp");
   background-color: green;
   background-size: cover;
   background-repeat: no-repeat;
+  cursor: url("/src/assets/cursor.png"), auto;
 }
 
 /*# sourceMappingURL=style.css.map */
