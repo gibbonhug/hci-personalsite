@@ -1,5 +1,4 @@
-
-// Journal and all child components
+// Journal and its child components
 #journal {
     // Journal fill exactly height of vh, and remain in place
     position: fixed;
@@ -51,5 +50,4 @@
         color: hsl(0, 100%, 37%);
         text-shadow: 10px 0px 10px hsl(0, 0%, 73%);
     }
-
 }

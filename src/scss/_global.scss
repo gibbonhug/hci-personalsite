@@ -1,0 +1,11 @@
+@font-face {
+    font-family: 'Magic';
+    src: url('/src/assets/MAGIC.TTF');
+}
+
+:root {
+    cursor: url('/src/assets/cursor.png'), auto;
+
+    // Morrowind journal font
+    font-family: 'Magic', 'Arial';
+}

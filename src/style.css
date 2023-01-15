@@ -54,6 +54,21 @@ table {
   border-spacing: 0;
 }
 
+@font-face {
+  font-family: "Magic";
+  src: url("/src/assets/MAGIC.TTF");
+}
+:root {
+  cursor: url("/src/assets/cursor.png"), auto;
+  font-family: "Magic", "Arial";
+}
+
+div.mw {
+  background-color: black;
+  border-width: 10px;
+  border-color: hsl(42deg, 38%, 51%);
+}
+
 #journal {
   position: fixed;
   height: 100vh;
@@ -95,28 +110,15 @@ table {
   text-shadow: 10px 0px 10px hsl(0deg, 0%, 73%);
 }
 
-@font-face {
-  font-family: "Magic";
-  src: url("/src/assets/MAGIC.TTF");
-}
 #app-wrapper {
   height: 100vh;
   background-image: url("/src/assets/Seyda_Neen_-_Morrowind.webp");
   background-color: green;
   background-size: cover;
   background-repeat: no-repeat;
-  cursor: url("/src/assets/cursor.png"), auto;
-  font-family: "Magic", "Arial";
-}
-
-#app-instructions {
-  background-color: black;
-  border-width: 10px;
-  border-color: black;
 }
 
 #inventory {
-  background-color: indigo;
   font-size: 5rem;
 }
 
