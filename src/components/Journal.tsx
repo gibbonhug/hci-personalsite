@@ -97,26 +97,25 @@ export default function Journal() {
     // Remember to wrap each body in a <p> tag
     const entries = [
         {
-            title: '16 Last Seed (Day 1)',
+            title: '13 January (Day 1)',
             body: (
                 <p>
-                    My <span>orders</span> are to go to the town of{' '}
-                    <span>Balmora</span> in <span>Vvardenfell District</span>{' '}
-                    and report to a man named <span>Caius Cosades</span>. To
-                    find out where he lives, I should ask in{' '}
-                    <span>Balmora</span> at the cornerclub called the{' '}
-                    <span>South Wall</span>. When I find{' '}
-                    <span>Caius Cosades</span>, I must give him a package of
-                    documents, and wait for further <span>orders</span>.
+                    My <span>orders</span> are to go to {' '}
+                    <span>Human Computer Interaction (CSC4720, Spring 2023)</span> at <span>Georgia State University</span>{' '}
+                    and report to an instructor named <span>Carol Bales</span>. To
+                    find out what classroom she teaches in, I should consult the{' '}
+                    <span>Internet</span> on the online portal called {' '}
+                    <span>Paws</span>. When I find{' '}
+                    <span>Carol Bales</span>, I must give her my attention, and wait for further <span>orders</span>.
                 </p>
             ),
         },
         {
-            title: '16 Last Seed (Day 1)',
+            title: '13 January (Day 1)',
             body: (
                 <p>
-                    I have met a Bosmer named <span>Fargoth</span> who claims
-                    the <span>Imperial</span>s have stolen a <span>ring</span>{' '}
+                    I have met a classmate named <span>Fargoth</span> who claims
+                    someone has stolen a <span>ring</span>{' '}
                     of his. He would like it back.
                 </p>
             ),
