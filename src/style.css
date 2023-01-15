@@ -63,10 +63,13 @@ table {
   font-family: "Magic", "Arial";
 }
 
-div.mw {
+.mw {
   background-color: black;
-  border-width: 10px;
+  border-style: solid;
+  border-width: 0.5rem;
   border-color: hsl(42deg, 38%, 51%);
+  color: hsl(42deg, 38%, 51%);
+  font-size: 2rem;
 }
 
 #journal {
@@ -116,6 +119,19 @@ div.mw {
   background-color: green;
   background-size: cover;
   background-repeat: no-repeat;
+}
+
+#app-instructions {
+  padding: 1rem;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 25vh;
+  flex-direction: column;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 #inventory {

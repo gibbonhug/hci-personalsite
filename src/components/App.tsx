@@ -120,11 +120,10 @@ export default function App() {
     return (
         <div id="app-wrapper">
             {!isJournalOpen && !isInventoryOpen && (
-                <div id="app-instructions">
-                    Open Journal with the J key
-                    <br />
-                    Open inventory with left click
-                </div>
+                <ul id="app-instructions" className="mw">
+                        <li>Open Journal with 'J' key</li>
+                        <li>Open Inventory with right click</li>
+                </ul>
             )}
             {isInventoryOpen && <Inventory></Inventory>}
             {isJournalOpen && <Journal playAudio={playAudio}></Journal>}
