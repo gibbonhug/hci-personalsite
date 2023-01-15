@@ -93,7 +93,7 @@ table {
   padding-left: 4vh;
   padding-right: 10vh;
 }
-#journal .temp {
+#journal .journal-turn-page {
   font-size: 3rem;
   text-align: center;
   color: hsl(0deg, 100%, 37%);
@@ -107,6 +107,10 @@ table {
   background-size: cover;
   background-repeat: no-repeat;
   cursor: url("/src/assets/cursor.png"), auto;
+}
+#app-wrapper .temp {
+  font-size: 5rem;
+  background-color: green;
 }
 
 /*# sourceMappingURL=style.css.map */
