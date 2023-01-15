@@ -98,7 +98,7 @@ export default function Journal() {
     const entries = [
         {
             title: '24 October (Day -90)',
-            body: <p></p>,
+            body: <p>Your name, degree, and any contact information you care to share. A description of your interest in the topic of Human-Computer Interaction, and what you want to get out of this class.  A description of the skills you bring to the class, and to your potential team mates.</p>,
         },
         {
             title: '13 January (Day 1)',
