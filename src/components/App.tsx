@@ -23,27 +23,24 @@ export default function App() {
         INVENTORY OPENENING/CLOSING w RIGHT CLICK
     */
 
-    // right click mouse button is '2'
-    // https://developer.mozilla.org/en-US/docs/Web/API/MouseEvent/button
+    // right click event is a 'contextmenu' mouse event
     useEffect(() => {
-        const handleClick = (event: MouseEvent) => {
-            if (event.button === 2) {
-                // close the journal if it's open
-                if (isJournalOpen) {
-                    setIsJournalOpen((isJournalOpen) => !isJournalOpen);
-                }
-
-                // no 'context menu'
-                event.preventDefault();
-                // open / close
-                setIsInventoryOpen((isInventoryOpen) => !isInventoryOpen);
+        const handleRightClick = (event: MouseEvent) => {
+            // close the journal if it's open
+            if (isJournalOpen) {
+                setIsJournalOpen((isJournalOpen) => !isJournalOpen);
             }
+
+            // no 'context menu'
+            event.preventDefault();
+            // open / close
+            setIsInventoryOpen((isInventoryOpen) => !isInventoryOpen);
         };
 
-        document.addEventListener('mousedown', handleClick);
+        document.addEventListener('contextmenu', handleRightClick);
 
         return () => {
-            document.removeEventListener('mousedown', handleClick);
+            document.removeEventListener('contextmenu', handleRightClick);
         };
     }, [isInventoryOpen, isJournalOpen]);
 
