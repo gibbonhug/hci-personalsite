@@ -4,6 +4,7 @@ import Next from "./Next";
 import { useState } from "react";
 
 export default function Journal() {
+    // Page turned either with Next/Prev component click; or L/R keyboard arrows
     const [curPage, setCurPage] = useState(0);
 
     /**
@@ -35,6 +36,14 @@ export default function Journal() {
         return;
     }
 
+    /**
+     * Function called when user hits a key.
+     * Same logic as hitting next/prev
+     * Added as an event listener on the window object.
+     * 
+     * @param event KeyboardEvent
+     * @returns void
+     */
     const handleKeyPress = (event: KeyboardEvent) => {
         if (event.key === "ArrowLeft") {
             updatePageFromDirection(false);
