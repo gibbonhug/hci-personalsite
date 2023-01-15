@@ -3,7 +3,11 @@ import JournalTurnPage from './JournalTurnPage';
 import { useState } from 'react';
 import turnAudioImport from '../assets/turn.mp3';
 
-export default function Journal() {
+interface JournalProps {
+    playAudio: Function;
+}
+
+export default function Journal(props: JournalProps) {
     /*
         STATE
     */
@@ -28,7 +32,7 @@ export default function Journal() {
         }
 
         // Valid turn
-        playAudio(turnAudio);
+        props.playAudio(turnAudio);
         updatePageFromDirection(direction);
     };
 
@@ -73,21 +77,6 @@ export default function Journal() {
         }
 
         return;
-    };
-
-    /**
-     * Function called when we turn page
-     *
-     * Pass in the audio to play
-     *
-     * @param audio The HTMLAudioElement (imported from mp3) to play
-     */
-    const playAudio = (audio: HTMLAudioElement) => {
-        // if it is already playing sound, stop the sound
-        audio.pause();
-        audio.currentTime = 0;
-        // play
-        audio.play();
     };
 
     /*

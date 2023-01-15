@@ -11,43 +11,64 @@ export default function App() {
     */
     const [isJournalOpen, setIsJournalOpen] = useState(false);
 
+    const closeAudio = new Audio(closeAudioImport);
+    const openAudio = new Audio(openAudioImport);
+
     // Open journal with 'j' key event listener; for conditional rendering
     useEffect(() => {
         const handleKeyPress = (event: KeyboardEvent) => {
             if (event.key === 'j' || event.key === 'J') {
-                setIsJournalOpen((isJournalOpen) => (!isJournalOpen))
+                if (isJournalOpen) {
+                    playAudio(closeAudio);
+                } else {
+                    playAudio(openAudio);
+                }
+                setIsJournalOpen((isJournalOpen) => !isJournalOpen);
             }
         };
 
         document.addEventListener('keydown', handleKeyPress);
 
-        return(() => {
-            document.removeEventListener('keydown', handleKeyPress)
-        })
-
+        return () => {
+            document.removeEventListener('keydown', handleKeyPress);
+        };
     }, [isJournalOpen]);
 
     /*
-        AUDIO
+        AUTOPLAY TITLE AUDIO
     */
 
     const titleAudio = new Audio(titleAudioImport);
 
     // Loop audio
     titleAudio.addEventListener('ended', () => {
-        titleAudio.currentTime = 0;
-        titleAudio.play();
+        playAudio(titleAudio);
     });
 
     // Play audio on render (note: will only work if user allows autoplay)
     useEffect(() => {
-        titleAudio.play();
+        playAudio(titleAudio);
     }, []);
+
+    /**
+     * Function called when we play an audio; checking if it is already playing with no clipping
+     *
+     * Pass in the audio to play
+     *
+     * @param audio The HTMLAudioElement (imported from mp3) to play
+     */
+    const playAudio = (audio: HTMLAudioElement) => {
+        // if it is already playing sound, stop the sound
+        audio.pause();
+        audio.currentTime = 0;
+        // play
+        audio.play();
+    };
 
     return (
         <div id="app-wrapper">
-            <div className='temp'>Open Journal with the J key</div>
-            {isJournalOpen && <Journal></Journal>}
+            <div className="temp">Open Journal with the J key</div>
+            {isJournalOpen && <Journal playAudio={playAudio}></Journal>}
         </div>
     );
 }
