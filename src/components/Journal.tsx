@@ -119,26 +119,24 @@ export default function Journal() {
             ),
         },
         {
-            title: '13 January (Day 1)',
+            title: '3 February (Day ??)',
             body: (
                 <p>
-                    I have met a classmate named <span>Fargoth</span> who claims
-                    someone has stolen a <span>ring</span> of his. He would like
-                    it back.
+                    User & Problem Research Paper
                 </p>
             ),
         },
         {
-            title: '2',
-            body: <p>I'm entry 2</p>,
+            title: '17 February (Day ??)',
+            body: <p>Team Skit & User Scenario</p>,
         },
         {
-            title: '3',
-            body: <p>I'm entry 3</p>,
+            title: '3 March (Day ??)',
+            body: <p>Team Project Phase 1 Interactive Prototype</p>,
         },
         {
-            title: '',
-            body: <p></p>,
+            title: '14 April (Day ??)',
+            body: <p>Team Project Phase 2: Evaluated Prototype</p>,
         },
     ];
 
