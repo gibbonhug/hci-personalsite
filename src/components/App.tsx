@@ -67,7 +67,7 @@ export default function App() {
 
     return (
         <div id="app-wrapper">
-            <div className="temp">Open Journal with the J key</div>
+            {!isJournalOpen && <div className="temp">Open Journal with the J key<br />Open inventory with left click (unimplemented)</div>}
             {isJournalOpen && <Journal playAudio={playAudio}></Journal>}
         </div>
     );
