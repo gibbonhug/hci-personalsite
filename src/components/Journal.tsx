@@ -5,11 +5,20 @@ import { useEffect, useState } from 'react';
 import turnAudioImport from '../assets/turn.mp3';
 
 export default function Journal() {
+    /*
+        HOOKS
+    */
+
     // Page turned either with Next/Prev component click; or L/R keyboard arrows
     const [curPage, setCurPage] = useState(0);
 
+    // using useEffect to not add millions of event listeners
+    useEffect(()=>{
+        document.addEventListener('keydown', handleKeyPress); 
+    }, []);
+
     /*
-        FUNCTIONS, EVT LISTENERS
+        FUNCTIONS
     */
 
     /**
@@ -62,11 +71,6 @@ export default function Journal() {
 
         return;
     };
-
-    // using useEffect to not add millions of event listeners
-    useEffect(()=>{
-        document.addEventListener('keydown', handleKeyPress); 
-    }, []);
 
     /**
      * Function called when we turn page with keyboard or next/prev
