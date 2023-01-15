@@ -160,6 +160,16 @@ export default function Journal() {
             ),
         },
         {
+            title: '16 Last Seed (Day 1)',
+            body: (
+                <p>
+                    I have met a classmate named <span>Fargoth</span> who claims
+                    someone has stolen a <span>ring</span> of his. He would like
+                    it back.
+                </p>
+            ),
+        },
+        {
             title: '3 February (Day ??)',
             body: <p>User & Problem Research Paper</p>,
         },
@@ -174,6 +184,10 @@ export default function Journal() {
         {
             title: '14 April (Day ??)',
             body: <p>Team Project Phase 2: Evaluated Prototype</p>,
+        },
+        {
+            title: '',
+            body: <p></p>,
         },
     ];
 
