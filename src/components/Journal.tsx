@@ -35,6 +35,18 @@ export default function Journal() {
         return;
     }
 
+    const handleKeyPress = (event: any) => {
+        console.log(event.keyCode);
+        if (event.keyCode === 37) {
+            updatePageFromDirection(false);
+        } else if (event.keyCode === 39) {
+            updatePageFromDirection(true);
+        }
+    }
+
+    // accessing window is I think bad practice but this is a 1-off project
+    window.addEventListener('keydown', handleKeyPress);
+
     // Add new entries to morrowind journal here
     // Remember to wrap each body in a <p> tag
     const entries = [
