@@ -1,6 +1,6 @@
 import JournalEntry from './JournalEntry';
 import JournalTurnPage from './JournalTurnPage';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import turnAudioImport from '../assets/turn.mp3';
 
 interface JournalProps {
@@ -16,17 +16,65 @@ export default function Journal(props: JournalProps) {
     const [curPage, setCurPage] = useState(0);
 
     /*
-        FUNCTIONS
+        TURNING PAGE
     */
 
+    useEffect(() => {
+        const handleKeyPress = (event: KeyboardEvent) => {
+            if (event.key === 'ArrowLeft') {
+                handleTurnPage(false);
+            } else if (event.key === 'ArrowRight') {
+                handleTurnPage(true);
+            }
+        };
+
+        document.addEventListener('keydown', handleKeyPress);
+
+        return () => {
+            document.removeEventListener('keydown', handleKeyPress);
+        };
+    }, [curPage]);
+
     /**
-     * Function to call whenever do something to turn a page (next/prev)
+     * Function to call whenever do something to turn a page (next/prev or arrow keys)
      *
      * First checks if we are making a valid turn (calls isValidPageTurn)
      *
      * @param direction Whether we are turning to prev page (false) or next page (true)
      */
     const handleTurnPage = (direction: boolean) => {
+        // closured functions
+        const isValidPageTurn = (direction: boolean) => {
+            // Do not turn backwards if we are on the 0th page
+            if (curPage === 0 && direction === false) {
+                return false;
+            }
+
+            // Do not turn forwards if we are on the last page
+            if (
+                curPage >= Math.ceil(entries.length / 2) &&
+                direction === true
+            ) {
+                return false;
+            }
+
+            return true;
+        };
+
+        const updatePageFromDirection = (direction: boolean) => {
+            /*
+                Since there are 2 "entries" per "page turn" (left and right),
+                I think it's easiest to "turn pages" 2 at a time, easily associating curPage and the entries array
+            */
+            if (direction === true) {
+                setCurPage(curPage + 2);
+            } else {
+                setCurPage(curPage - 2);
+            }
+
+            return;
+        };
+
         if (!isValidPageTurn(direction)) {
             return;
         }
@@ -34,49 +82,6 @@ export default function Journal(props: JournalProps) {
         // Valid turn
         props.playAudio(turnAudio);
         updatePageFromDirection(direction);
-    };
-
-    /**
-     * Function to determine whether to turn page or not.
-     *
-     * For example, do not attempt to turn the page to the previous page if we are on the first page.
-     *
-     * This logic is used in updatePageFromDirection and playAudio.
-     * @param direction Whether we are turning to prev page (false) or next page (true)
-     */
-    const isValidPageTurn = (direction: boolean) => {
-        // Do not turn backwards if we are on the 0th page
-        if (curPage === 0 && direction === false) {
-            return false;
-        }
-
-        // Do not turn forwards if we are on the last page
-        if (curPage >= Math.ceil(entries.length / 2) && direction === true) {
-            return false;
-        }
-
-        return true;
-    };
-
-    /**
-     * Function to actually update the page
-     *
-     * Assumed the page turn is valid (ONLY call this within turnPage function)
-     *
-     * @param direction: Whether we are turning to prev page (false) or next page (true)
-     */
-    const updatePageFromDirection = (direction: boolean) => {
-        /*
-            Since there are 2 "entries" per "page turn" (left and right),
-            I think it's easiest to "turn pages" 2 at a time, easily associating curPage and the entries array
-        */
-        if (direction === true) {
-            setCurPage(curPage + 2);
-        } else {
-            setCurPage(curPage - 2);
-        }
-
-        return;
     };
 
     /*
