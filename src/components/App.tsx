@@ -17,30 +17,46 @@ export default function App() {
         ESC CLOSES JOURNAL & INVENTORY
     */
 
-    
+    useEffect(() => {
+        const handleKeyPress = (event: KeyboardEvent) => {
+            if (event.key === 'Escape') {
+                setIsJournalOpen(false);
+                setIsInventoryOpen(false);
+            }
+        };
+
+        document.addEventListener('keydown', handleKeyPress);
+
+        return () => {
+            document.removeEventListener('keydown', handleKeyPress);
+        };
+    }, [isInventoryOpen, isJournalOpen]);
 
     /*
         INVENTORY OPENENING/CLOSING w RIGHT CLICK
     */
 
-    // right click event is a 'contextmenu' mouse event
+    // right click button is 2
+    // https://developer.mozilla.org/en-US/docs/Web/API/MouseEvent/button
     useEffect(() => {
-        const handleRightClick = (event: MouseEvent) => {
-            // close the journal if it's open
-            if (isJournalOpen) {
-                setIsJournalOpen((isJournalOpen) => !isJournalOpen);
-            }
+        const handleMouseDown = (event: MouseEvent) => {
+            if (event.button === 2) {
+                // close the journal if it's open
+                if (isJournalOpen) {
+                    setIsJournalOpen((isJournalOpen) => !isJournalOpen);
+                }
 
-            // no 'context menu'
-            event.preventDefault();
-            // open / close
-            setIsInventoryOpen((isInventoryOpen) => !isInventoryOpen);
+                // no 'context menu'
+                event.preventDefault();
+                // open / close
+                setIsInventoryOpen((isInventoryOpen) => !isInventoryOpen);
+            }
         };
 
-        document.addEventListener('contextmenu', handleRightClick);
+        document.addEventListener('mousedown', handleMouseDown);
 
         return () => {
-            document.removeEventListener('contextmenu', handleRightClick);
+            document.removeEventListener('mousedown', handleMouseDown);
         };
     }, [isInventoryOpen, isJournalOpen]);
 
