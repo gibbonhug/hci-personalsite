@@ -14,7 +14,13 @@ export default function App() {
     const [isInventoryOpen, setIsInventoryOpen] = useState(false);
 
     /*
-        INVENTORY OPENENING/CLOSING 
+        ESC CLOSES JOURNAL & INVENTORY
+    */
+
+    
+
+    /*
+        INVENTORY OPENENING/CLOSING w RIGHT CLICK
     */
 
     // right click mouse button is '2'
@@ -31,19 +37,18 @@ export default function App() {
                 event.preventDefault();
                 // open / close
                 setIsInventoryOpen((isInventoryOpen) => !isInventoryOpen);
-
             }
         };
 
-        document.addEventListener('contextmenu', handleClick);
+        document.addEventListener('mousedown', handleClick);
 
         return () => {
-            document.removeEventListener('contextmenu', handleClick);
+            document.removeEventListener('mousedown', handleClick);
         };
     }, [isInventoryOpen, isJournalOpen]);
 
     /*
-        JOURNAL OPENING/CLOSING
+        JOURNAL OPENING/CLOSING w J|j
     */
 
     const closeJournalAudio = new Audio(closeJournalAudioImport);
