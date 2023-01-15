@@ -1,7 +1,7 @@
 import JournalEntry from './JournalEntry';
 import Prev from './Prev';
 import Next from './Next';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import turnAudioImport from '../assets/turn.mp3';
 
 export default function Journal() {
@@ -9,15 +9,15 @@ export default function Journal() {
         STATE
     */
 
-    // Page turned either with Next/Prev component click; or L/R keyboard arrows
+    // Page turned with Next/Prev component click
     const [curPage, setCurPage] = useState(0);
 
     /*
-        FUNCTIONS, USEEFFECT LISTENER
+        FUNCTIONS
     */
 
     /**
-     * Function to call whenever do something to turn a page (next/prev, arrow key, etc)
+     * Function to call whenever do something to turn a page (next/prev)
      *
      * First checks if we are making a valid turn (calls isValidPageTurn)
      *
@@ -38,7 +38,7 @@ export default function Journal() {
      *
      * For example, do not attempt to turn the page to the previous page if we are on the first page.
      *
-     * This logic is be used in updatePageFromDirection and playAudio.
+     * This logic is used in updatePageFromDirection and playAudio.
      * @param direction Whether we are turning to prev page (false) or next page (true)
      */
     const isValidPageTurn = (direction: boolean) => {
@@ -58,7 +58,7 @@ export default function Journal() {
     /**
      * Function to actually update the page
      *
-     * Assumed the page turn is valid (only call this within turnPage function)
+     * Assumed the page turn is valid (ONLY call this within turnPage function)
      *
      * @param direction: Whether we are turning to prev page (false) or next page (true)
      */
@@ -77,7 +77,7 @@ export default function Journal() {
     };
 
     /**
-     * Function called when we turn page with keyboard or next/prev
+     * Function called when we turn page
      *
      * Pass in the audio to play
      *
@@ -90,34 +90,6 @@ export default function Journal() {
         // play
         audio.play();
     };
-
-    // /**
-    //  * Function called when user hits a key.
-    //  * Same logic as hitting next/prev
-    //  * Added as an event listener on the document object.
-    //  *
-    //  * @param event KeyboardEvent
-    //  */
-    // const handleKeyPress = (event: KeyboardEvent) => {
-    //     if (event.key === 'ArrowLeft') {
-    //         updatePageFromDirection(false);
-    //         playAudio(turnAudio);
-    //     } else if (event.key === 'ArrowRight') {
-    //         updatePageFromDirection(true);
-    //         playAudio(turnAudio);
-    //     }
-
-    //     return;
-    // };
-
-    // // using useEffect to not add millions of event listeners
-    // useEffect(() => {
-    //     document.addEventListener('keydown', handleKeyPress);
-
-    //     return () => {
-    //         window.removeEventListener('keydown', handleKeyPress);
-    //     };
-    // }, [curPage]);
 
     /*
         DATA CONSTS
