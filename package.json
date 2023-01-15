@@ -1,6 +1,7 @@
 {
   "name": "hci-personalsite",
   "version": "0.1.0",
+  "homepage": "./",
   "private": true,
   "dependencies": {
     "@smakss/react-scroll-direction": "^1.0.4",
