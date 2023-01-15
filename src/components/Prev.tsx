@@ -1,13 +1,13 @@
 import turnAudio from '../assets/turn.mp3';
 
 interface PrevProps {
-    updatePage: Function;
+    updatePageFromDirection: Function;
 }
 
 export default function Prev(props: PrevProps) {
-    const onClick = () => {
+    const handleClick = () => {
         playAudio();
-        props.updatePage(false);
+        props.updatePageFromDirection(false);
     }
 
     const turnAudioObject = new Audio(turnAudio);
@@ -21,6 +21,6 @@ export default function Prev(props: PrevProps) {
     }
 
     return (
-        <div className="temp" onClick={onClick}><span>Prev</span></div>
+        <div className="temp" onClick={handleClick}><span>Prev</span></div>
     )
 }

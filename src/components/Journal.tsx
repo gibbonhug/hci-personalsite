@@ -11,7 +11,7 @@ export default function Journal() {
      * @param direction: Whether we are turning to prev page (false) or next page (true)
      * @returns void
      */
-    const updatePage = (direction: boolean) => {
+    const updatePageFromDirection = (direction: boolean) => {
         // Do not turn backwards if we are on the 0th page
         if (curPage == 0 && direction == false) {
             return;
@@ -68,8 +68,8 @@ export default function Journal() {
         <div id="journal">
             <JournalEntry id={"journal-entry-left"} content={entries[curPage]}></JournalEntry>
             <JournalEntry id={"journal-entry-right"} content={entries[curPage+1]}></JournalEntry>
-            <Prev updatePage={updatePage}></Prev>
-            <Next updatePage={updatePage}></Next>
+            <Prev updatePageFromDirection={updatePageFromDirection}></Prev>
+            <Next updatePageFromDirection={updatePageFromDirection}></Next>
         </div>
     )
 }
