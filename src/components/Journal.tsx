@@ -35,13 +35,14 @@ export default function Journal() {
         return;
     }
 
-    const handleKeyPress = (event: any) => {
-        console.log(event.keyCode);
-        if (event.keyCode === 37) {
+    const handleKeyPress = (event: KeyboardEvent) => {
+        if (event.key === "ArrowLeft") {
             updatePageFromDirection(false);
-        } else if (event.keyCode === 39) {
+        } else if (event.key === "ArrowRight") {
             updatePageFromDirection(true);
         }
+        
+        return;
     }
 
     // accessing window is I think bad practice but this is a 1-off project
