@@ -14,12 +14,12 @@ export default function Journal() {
      */
     const updatePageFromDirection = (direction: boolean) => {
         // Do not turn backwards if we are on the 0th page
-        if (curPage == 0 && direction == false) {
+        if (curPage === 0 && direction === false) {
             return;
         }
 
         // Do not turn forwards if we are on the last page
-        if (curPage >= Math.ceil(entries.length / 2) && direction == true) {
+        if (curPage >= Math.ceil(entries.length / 2) && direction === true) {
             return;
         }
 
@@ -27,7 +27,7 @@ export default function Journal() {
             Since there are 2 "entries" per "page turn" (left and right),
             I think it's easiest to "turn pages" 2 at a time, easily associating curPage and the entries array
         */
-        if (direction == true) {
+        if (direction === true) {
             setCurPage(curPage + 2);
         } else {
             setCurPage(curPage - 2);
