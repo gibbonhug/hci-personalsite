@@ -1,27 +1,56 @@
 import Journal from './Journal';
 import titleAudioImport from '../assets/title.mp3';
 // Could not find the actual journal open/close in assets but these will do
-import openAudioImport from '../assets/open.mp3';
-import closeAudioImport from '../assets/close.mp3';
+import openJournalAudioImport from '../assets/open.mp3';
+import closeJournalAudioImport from '../assets/close.mp3';
 import { useEffect, useState } from 'react';
+import Inventory from './Inventory';
 
 export default function App() {
     /*
-        JOURNAL OPENING/CLOSING
+        STATE
     */
     const [isJournalOpen, setIsJournalOpen] = useState(false);
+    const [isInventoryOpen, setIsInventoryOpen] = useState(false);
 
-    const closeAudio = new Audio(closeAudioImport);
-    const openAudio = new Audio(openAudioImport);
+    /*
+        INVENTORY OPENENING/CLOSING 
+    */
+
+    // right click mouse button is '2'
+    // https://developer.mozilla.org/en-US/docs/Web/API/MouseEvent/button
+    useEffect(() => {
+        const handleClick = (event: MouseEvent) => {
+            if (event.button === 2) {
+                // no 'context menu'
+                event.preventDefault();
+                // open / close
+                setIsInventoryOpen((isInventoryOpen) => !isInventoryOpen);
+            }
+        };
+
+        document.addEventListener('contextmenu', handleClick);
+
+        return () => {
+            document.removeEventListener('contextmenu', handleClick);
+        };
+    }, [isInventoryOpen]);
+
+    /*
+        JOURNAL OPENING/CLOSING
+    */
+
+    const closeJournalAudio = new Audio(closeJournalAudioImport);
+    const openJournalAudio = new Audio(openJournalAudioImport);
 
     // Open journal with 'j' key event listener; for conditional rendering
     useEffect(() => {
         const handleKeyPress = (event: KeyboardEvent) => {
             if (event.key === 'j' || event.key === 'J') {
                 if (isJournalOpen) {
-                    playAudio(closeAudio);
+                    playAudio(closeJournalAudio);
                 } else {
-                    playAudio(openAudio);
+                    playAudio(openJournalAudio);
                 }
                 setIsJournalOpen((isJournalOpen) => !isJournalOpen);
             }
@@ -67,7 +96,14 @@ export default function App() {
 
     return (
         <div id="app-wrapper">
-            {!isJournalOpen && <div className="temp">Open Journal with the J key<br />Open inventory with left click (unimplemented)</div>}
+            {!isJournalOpen && !isInventoryOpen && (
+                <div className="temp">
+                    Open Journal with the J key
+                    <br />
+                    Open inventory with left click
+                </div>
+            )}
+            {isInventoryOpen && <Inventory></Inventory>}
             {isJournalOpen && <Journal playAudio={playAudio}></Journal>}
         </div>
     );
