@@ -22,10 +22,16 @@ export default function App() {
     useEffect(() => {
         const handleClick = (event: MouseEvent) => {
             if (event.button === 2) {
+                // close the journal if it's open
+                if (isJournalOpen) {
+                    setIsJournalOpen((isJournalOpen) => !isJournalOpen);
+                }
+
                 // no 'context menu'
                 event.preventDefault();
                 // open / close
                 setIsInventoryOpen((isInventoryOpen) => !isInventoryOpen);
+
             }
         };
 
@@ -34,7 +40,7 @@ export default function App() {
         return () => {
             document.removeEventListener('contextmenu', handleClick);
         };
-    }, [isInventoryOpen]);
+    }, [isInventoryOpen, isJournalOpen]);
 
     /*
         JOURNAL OPENING/CLOSING
@@ -47,12 +53,19 @@ export default function App() {
     useEffect(() => {
         const handleKeyPress = (event: KeyboardEvent) => {
             if (event.key === 'j' || event.key === 'J') {
+                // close the inventory if it's open
+                if (isInventoryOpen) {
+                    setIsInventoryOpen((isInventoryOpen) => !isInventoryOpen);
+                }
+
                 if (isJournalOpen) {
                     playAudio(closeJournalAudio);
                 } else {
                     playAudio(openJournalAudio);
                 }
                 setIsJournalOpen((isJournalOpen) => !isJournalOpen);
+
+
             }
         };
 
@@ -61,7 +74,7 @@ export default function App() {
         return () => {
             document.removeEventListener('keydown', handleKeyPress);
         };
-    }, [isJournalOpen]);
+    }, [isJournalOpen, isInventoryOpen]);
 
     /*
         AUTOPLAY TITLE AUDIO
