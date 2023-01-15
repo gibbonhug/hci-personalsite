@@ -1,6 +1,8 @@
 import Journal from './Journal';
-
 import titleAudioImport from '../assets/title.mp3';
+// Could not find the actual journal open/close in assets but these will do
+import openAudioImport from '../assets/open.mp3';
+import closeAudioImport from '../assets/close.mp3';
 import { useEffect, useState } from 'react';
 
 export default function App() {
