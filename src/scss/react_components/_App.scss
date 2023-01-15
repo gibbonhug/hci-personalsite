@@ -13,9 +13,10 @@
 
     // Morrowind journal font
     font-family: 'Magic', 'Arial';
+}
 
-    .temp {
-        font-size: 5rem;
-        background-color: green;
-    }
+#app-instructions {
+    background-color: black;
+    border-width: 10px;
+    border-color: black
 }

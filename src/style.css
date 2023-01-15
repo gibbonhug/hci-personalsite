@@ -108,9 +108,11 @@ table {
   cursor: url("/src/assets/cursor.png"), auto;
   font-family: "Magic", "Arial";
 }
-#app-wrapper .temp {
-  font-size: 5rem;
-  background-color: green;
+
+#app-instructions {
+  background-color: black;
+  border-width: 10px;
+  border-color: black;
 }
 
 #inventory {

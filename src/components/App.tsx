@@ -120,7 +120,7 @@ export default function App() {
     return (
         <div id="app-wrapper">
             {!isJournalOpen && !isInventoryOpen && (
-                <div className="temp">
+                <div id="app-instructions">
                     Open Journal with the J key
                     <br />
                     Open inventory with left click
