@@ -41,10 +41,8 @@ export default function App() {
     useEffect(() => {
         const handleMouseDown = (event: MouseEvent) => {
             if (event.button === 2) {
-                // close the journal if it's open
-                if (isJournalOpen) {
-                    setIsJournalOpen((isJournalOpen) => !isJournalOpen);
-                }
+                // opening inventory closes journal
+                setIsJournalOpen(false);
 
                 // no 'context menu'
                 event.preventDefault();
@@ -71,19 +69,16 @@ export default function App() {
     useEffect(() => {
         const handleKeyPress = (event: KeyboardEvent) => {
             if (event.key === 'j' || event.key === 'J') {
-                // close the inventory if it's open
-                if (isInventoryOpen) {
-                    setIsInventoryOpen((isInventoryOpen) => !isInventoryOpen);
-                }
+                // opening journal closes inventory
+                setIsInventoryOpen(false);
 
                 if (isJournalOpen) {
                     playAudio(closeJournalAudio);
                 } else {
                     playAudio(openJournalAudio);
                 }
+
                 setIsJournalOpen((isJournalOpen) => !isJournalOpen);
-
-
             }
         };
 
