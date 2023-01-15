@@ -6,19 +6,14 @@ import turnAudioImport from '../assets/turn.mp3';
 
 export default function Journal() {
     /*
-        HOOKS
+        STATE
     */
 
     // Page turned either with Next/Prev component click; or L/R keyboard arrows
     const [curPage, setCurPage] = useState(0);
 
-    // using useEffect to not add millions of event listeners
-    useEffect(() => {
-        document.addEventListener('keydown', handleKeyPress);
-    }, []);
-
     /*
-        FUNCTIONS
+        FUNCTIONS, USEEFFECT LISTENER
     */
 
     /**
@@ -49,24 +44,33 @@ export default function Journal() {
         return;
     };
 
-    /**
-     * Function called when user hits a key.
-     * Same logic as hitting next/prev
-     * Added as an event listener on the document object.
-     *
-     * @param event KeyboardEvent
-     */
-    const handleKeyPress = (event: KeyboardEvent) => {
-        if (event.key === 'ArrowLeft') {
-            updatePageFromDirection(false);
-            playAudio(turnAudio);
-        } else if (event.key === 'ArrowRight') {
-            updatePageFromDirection(true);
-            playAudio(turnAudio);
-        }
+    // /**
+    //  * Function called when user hits a key.
+    //  * Same logic as hitting next/prev
+    //  * Added as an event listener on the document object.
+    //  *
+    //  * @param event KeyboardEvent
+    //  */
+    // const handleKeyPress = (event: KeyboardEvent) => {
+    //     if (event.key === 'ArrowLeft') {
+    //         updatePageFromDirection(false);
+    //         playAudio(turnAudio);
+    //     } else if (event.key === 'ArrowRight') {
+    //         updatePageFromDirection(true);
+    //         playAudio(turnAudio);
+    //     }
 
-        return;
-    };
+    //     return;
+    // };
+
+    // // using useEffect to not add millions of event listeners
+    // useEffect(() => {
+    //     document.addEventListener('keydown', handleKeyPress);
+
+    //     return () => {
+    //         window.removeEventListener('keydown', handleKeyPress);
+    //     };
+    // }, [curPage]);
 
     /**
      * Function called when we turn page with keyboard or next/prev
@@ -94,21 +98,7 @@ export default function Journal() {
     const entries = [
         {
             title: '24 October (Day -90)',
-            body: (
-                <p>
-                    My <span>orders</span> are to go to{' '}
-                    <span>
-                        Human Computer Interaction (CSC4720, Spring 2023)
-                    </span>{' '}
-                    at <span>Georgia State University</span> and report to an
-                    instructor named <span>Carol Bales</span>. To find out what
-                    classroom she teaches in, I should consult the{' '}
-                    <span>Internet</span> on the online portal called{' '}
-                    <span>Paws</span>. When I find <span>Carol Bales</span>, I
-                    must give her my attention, and wait for further{' '}
-                    <span>orders</span>.
-                </p>
-            ),
+            body: <p></p>,
         },
         {
             title: '13 January (Day 1)',
@@ -147,9 +137,9 @@ export default function Journal() {
             body: <p>I'm entry 3</p>,
         },
         {
-            title:'',
-            body: <p></p>
-        }
+            title: '',
+            body: <p></p>,
+        },
     ];
 
     return (
