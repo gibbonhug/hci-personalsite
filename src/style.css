@@ -75,7 +75,7 @@ table {
   grid-template-rows: 95vh 5vh;
 }
 #journal .journal-entry {
-  font-size: 3.5rem;
+  font-size: 2.75rem;
   padding-top: 5vh;
 }
 #journal .journal-entry h2 {
@@ -94,7 +94,7 @@ table {
   padding-right: 10vh;
 }
 #journal .temp {
-  font-size: 3.5rem;
+  font-size: 3rem;
   text-align: center;
   color: hsl(0deg, 100%, 37%);
   text-shadow: 10px 0px 10px hsl(0deg, 0%, 73%);
