@@ -8,7 +8,7 @@ export default function App() {
 
     // Play audio on render (note: will only work if user allows autoplay)
     useEffect(() => {
-        titleAudio.play(); // need to add logic to loop
+        titleAudio.play();
     }, []);
 
     // Loop audio
