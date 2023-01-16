@@ -61,6 +61,7 @@ export default function Inventory(props: InventoryProps) {
                         <div>Magic Items</div>
                         <div>Cost/Charge</div>
                     </div>
+                    <hr></hr>
                     <div className='inventory-magic-section-flexbox'>
                         <div>Engraved Ring of Healing</div>
                         <div>5/20</div>
