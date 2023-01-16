@@ -1,5 +1,5 @@
-import InventorySection from "./InventorySection";
-import gsuMapAsset from "../assets/gsumap.jpg";
+import InventorySection from './InventorySection';
+import gsuMapAsset from '../assets/gsumap.jpg';
 
 interface InventoryProps {}
 
@@ -43,22 +43,23 @@ export default function Inventory(props: InventoryProps) {
     const sections = [
         {
             title: 'Julian Willis',
-            body: <></>
+            body: <></>,
         },
         {
             title: 'Aderhold Learning Center',
-            body: <img src={gsuMapAsset}></img>
+            body: <img src={gsuMapAsset}></img>,
         },
         {
             title: 'Engraved Ring of Healing',
-            body: <></>
-        }
-    ]
+            body: <></>,
+        },
+    ];
 
-    return <div id="inventory" className="mw">
-        <InventorySection content={sections[0]}></InventorySection>
-        <InventorySection content={sections[1]}></InventorySection>
-        <InventorySection content={sections[2]}></InventorySection>
-
-    </div>;
+    return (
+        <div id="inventory" className="mw">
+            <InventorySection content={sections[0]}></InventorySection>
+            <InventorySection content={sections[1]}></InventorySection>
+            <InventorySection content={sections[2]}></InventorySection>
+        </div>
+    );
 }
