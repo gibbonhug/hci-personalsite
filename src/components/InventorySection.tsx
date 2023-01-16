@@ -10,6 +10,7 @@ export default function InventorySection(props: InventorySectionProps) {
                 <div className="inventory-section-title-text">{props.title}</div>
                 <div className="inventory-section-title-texture"></div>
             </div>
+            <div className='inventory-section-content mw'></div>
         </div>
     );
 }

@@ -136,10 +136,6 @@ table {
 #inventory {
   font-size: 5rem;
 }
-#inventory .inventory-section {
-  padding: 40px;
-  background-color: seagreen;
-}
 #inventory .inventory-section .inventory-section-title-group {
   display: flex;
   flex-direction: row;
@@ -148,10 +144,14 @@ table {
 #inventory .inventory-section .inventory-section-title-group .inventory-section-title-texture {
   background-image: url("/src/assets/texture.png");
   background-repeat: repeat;
-  width: 100px;
+  flex-grow: 1;
 }
 #inventory .inventory-section .inventory-section-title-group .inventory-section-title-text {
   background-color: thistle;
+  flex-grow: 0;
+}
+#inventory .inventory-section .inventory-section-content {
+  height: 100px;
 }
 
 /*# sourceMappingURL=style.css.map */
