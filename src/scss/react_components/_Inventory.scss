@@ -2,6 +2,8 @@
     font-size: 5rem;
 
     .inventory-section {
+        width: max-content;
+        height: max-content;
         .inventory-section-title-group {
             display: flex;
             
@@ -19,6 +21,10 @@
 
         .inventory-section-content {
             overflow: scroll;
+        }
+
+        .inventory-light-text {
+            color: hsl(42, 61%, 69%);
         }
     }
 }

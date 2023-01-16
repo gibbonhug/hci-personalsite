@@ -10,7 +10,9 @@ export default function Inventory(props: InventoryProps) {
             body: (
                 <>
                     <div>
-                        Major Skills (Course-Related)
+                        <div className="inventory-light-text">
+                            Major Skills (Course-Related)
+                        </div>
                         <ul>
                             <li>React.js</li>
                             <li>CSS</li>
@@ -19,14 +21,18 @@ export default function Inventory(props: InventoryProps) {
                         </ul>
                     </div>
                     <div>
-                        Minor Skills (Course-Related)
+                        <div className="inventory-light-text">
+                            Minor Skills (Course-Related)
+                        </div>
                         <ul>
                             <li>Graphic Design</li>
                             <li>Typography</li>
                         </ul>
                     </div>
                     <div>
-                        Misc Skills (Hobbies/Interests)
+                        <div className="inventory-light-text">
+                            Misc Skills (Hobbies&Interests)
+                        </div>
                         <ul>
                             <li>Maskmaking (Venetian masks)</li>
                             <li>Painting</li>

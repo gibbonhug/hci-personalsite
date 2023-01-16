@@ -136,6 +136,10 @@ table {
 #inventory {
   font-size: 5rem;
 }
+#inventory .inventory-section {
+  width: max-content;
+  height: max-content;
+}
 #inventory .inventory-section .inventory-section-title-group {
   display: flex;
 }
@@ -150,6 +154,9 @@ table {
 }
 #inventory .inventory-section .inventory-section-content {
   overflow: scroll;
+}
+#inventory .inventory-section .inventory-light-text {
+  color: hsl(42deg, 61%, 69%);
 }
 
 /*# sourceMappingURL=style.css.map */
