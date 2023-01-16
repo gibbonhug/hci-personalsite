@@ -6,9 +6,9 @@
     height: 100vh;
 
     display: grid;
+    // change these
     grid-template-columns: 1fr 1fr 1fr;
-
-    grid-template-rows: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
 
     .inventory-section {
         height: max-content;
@@ -43,16 +43,20 @@
 
     // Skills section
     #inventory-section-1 {
-
+        grid-column: 1/2;
+        grid-row: 1/2;
     }
 
     // Map section
     #inventory-section-2 {
-
+        grid-column: 3/4;
+        grid-row: 1/2;
     }
 
     // Magic items section
     #inventory-section-3 {
+        grid-column: 3/4;
+        grid-row: 3/4;
 
         .inventory-magic-section-flexbox {
             display: flex;

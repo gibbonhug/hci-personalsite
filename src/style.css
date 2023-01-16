@@ -139,7 +139,7 @@ table {
   height: 100vh;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
 }
 #inventory .inventory-section {
   height: max-content;
@@ -162,6 +162,18 @@ table {
 }
 #inventory .inventory-section .inventory-section-content img {
   object-fit: fill;
+}
+#inventory #inventory-section-1 {
+  grid-column: 1/2;
+  grid-row: 1/2;
+}
+#inventory #inventory-section-2 {
+  grid-column: 3/4;
+  grid-row: 1/2;
+}
+#inventory #inventory-section-3 {
+  grid-column: 3/4;
+  grid-row: 3/4;
 }
 #inventory #inventory-section-3 .inventory-magic-section-flexbox {
   display: flex;
