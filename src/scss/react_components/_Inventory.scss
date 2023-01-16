@@ -3,6 +3,10 @@
 
     // transclucent black bg
     background-color: rgba(0, 0, 0, 0.75);
+    height: 100vh;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
 
     .inventory-section {
         min-width: 750px;
