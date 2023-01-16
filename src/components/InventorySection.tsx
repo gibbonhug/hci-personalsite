@@ -1,5 +1,8 @@
 interface InventorySectionProps {
-    title: string;
+    content: {
+        title: string;
+        body: JSX.Element;
+    }
 }
 
 export default function InventorySection(props: InventorySectionProps) {
@@ -7,10 +10,12 @@ export default function InventorySection(props: InventorySectionProps) {
         <div className="inventory-section mw">
             <div className="inventory-section-title-group">
                 <div className="inventory-section-title-texture"></div>
-                <div className="inventory-section-title-text">{props.title}</div>
+                <div className="inventory-section-title-text">{props.content.title}</div>
                 <div className="inventory-section-title-texture"></div>
             </div>
-            <div className='inventory-section-content mw'></div>
+            <div className='inventory-section-content mw'>
+                {props.content.body}
+            </div>
         </div>
     );
 }
