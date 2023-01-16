@@ -80,7 +80,6 @@ table {
   left: 50%;
   transform: translate(-50%, -50%);
   background-image: url("/src/assets/journal.jpg");
-  background-color: hsl(0deg, 100%, 17%);
   background-repeat: no-repeat;
   background-size: contain;
   display: grid;
