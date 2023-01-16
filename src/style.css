@@ -158,6 +158,12 @@ table {
 }
 #inventory .inventory-section .inventory-section-content {
   overflow: scroll;
+  border-style: solid;
+  border-width: 0.25rem;
+  border-color: hsl(42deg, 38%, 51%);
+  outline-style: solid;
+  outline-width: 0.25rem;
+  outline-color: hsl(0deg, 0%, 0%);
 }
 #inventory .inventory-section .inventory-section-content img {
   width: 100%;

@@ -10,7 +10,7 @@ export default function Inventory(props: InventoryProps) {
             body: (
                 <div className='inventory-section-inner-box'>
                     <div>
-                        <h3 className="inventory-light-text ">
+                        <h3 className="inventory-light-text">
                             Major Skills (Course-Related)
                         </h3>
                         <ul>
