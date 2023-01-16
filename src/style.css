@@ -135,9 +135,11 @@ table {
 
 #inventory {
   font-size: 5rem;
+  background-color: rgba(0, 0, 0, 0.75);
 }
 #inventory .inventory-section {
-  width: max-content;
+  min-width: 750px;
+  max-width: 50%;
   height: max-content;
 }
 #inventory .inventory-section .inventory-section-title-group {
@@ -154,6 +156,13 @@ table {
 }
 #inventory .inventory-section .inventory-section-content {
   overflow: scroll;
+}
+#inventory .inventory-section .inventory-section-content img {
+  object-fit: fill;
+}
+#inventory .inventory-section .inventory-magic-section-flexbox {
+  display: flex;
+  justify-content: space-between;
 }
 #inventory .inventory-section .inventory-light-text {
   color: hsl(42deg, 61%, 69%);

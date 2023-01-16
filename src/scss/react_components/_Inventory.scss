@@ -1,8 +1,13 @@
 #inventory {
     font-size: 5rem;
 
+    // transclucent black bg
+    background-color: rgba(0, 0, 0, 0.75);
+
     .inventory-section {
-        width: max-content;
+        min-width: 750px;
+        max-width: 50%;
+
         height: max-content;
         .inventory-section-title-group {
             display: flex;
@@ -20,11 +25,24 @@
         }
 
         .inventory-section-content {
+    
             overflow: scroll;
+
+            // map grows to fill its container
+            img {
+                object-fit: fill;
+            }
+        }
+
+        // Specific sections
+        .inventory-magic-section-flexbox {
+            display: flex;
+            justify-content: space-between;
         }
 
         .inventory-light-text {
             color: hsl(42, 61%, 69%);
         }
+
     }
 }

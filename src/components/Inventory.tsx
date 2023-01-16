@@ -55,12 +55,23 @@ export default function Inventory(props: InventoryProps) {
         },
         {
             title: 'Engraved Ring of Healing',
-            body: <></>,
+            body: (
+                <div className='inventory-light-text'>
+                    <div className='inventory-magic-section-flexbox'>
+                        <div>Magic Items</div>
+                        <div>Cost/Charge</div>
+                    </div>
+                    <div className='inventory-magic-section-flexbox'>
+                        <div>Engraved Ring of Healing</div>
+                        <div>5/20</div>
+                    </div>
+                </div>
+            ),
         },
     ];
 
     return (
-        <div id="inventory" className="mw">
+        <div id="inventory">
             <InventorySection content={sections[0]}></InventorySection>
             <InventorySection content={sections[1]}></InventorySection>
             <InventorySection content={sections[2]}></InventorySection>
