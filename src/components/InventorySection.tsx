@@ -1,4 +1,6 @@
 interface InventorySectionProps {
+    id: string;
+    
     content: {
         title: string;
         body: JSX.Element;
