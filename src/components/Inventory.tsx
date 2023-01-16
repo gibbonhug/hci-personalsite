@@ -1,11 +1,12 @@
-interface InventoryProps {
+import InventorySection from "./InventorySection";
 
-}
+interface InventoryProps {}
 
 export default function Inventory(props: InventoryProps) {
-    return (
-        <div id='inventory' className='mw'>
-            <div>Major Skills (Course-Related)
+    const stuff = (
+        <>
+            <div>
+                Major Skills (Course-Related)
                 <ul>
                     <li>React.js</li>
                     <li>CSS</li>
@@ -13,13 +14,15 @@ export default function Inventory(props: InventoryProps) {
                     <li>Technical documentation</li>
                 </ul>
             </div>
-            <div>Minor Skills (Course-Related)
+            <div>
+                Minor Skills (Course-Related)
                 <ul>
                     <li>Graphic Design</li>
                     <li>Typography</li>
                 </ul>
             </div>
-            <div>Misc Skills (Hobbies/Interests)</div>
+            <div>
+                Misc Skills (Hobbies/Interests)
                 <ul>
                     <li>Maskmaking (Venetian masks)</li>
                     <li>Painting</li>
@@ -32,6 +35,10 @@ export default function Inventory(props: InventoryProps) {
                     <li>Algorithms</li>
                     <li>Running</li>
                 </ul>
-        </div>
-    )
+            </div>
+        </>
+    );
+    return <div id="inventory" className="mw">
+        <InventorySection title={'Julian Willis'}></InventorySection>
+    </div>;
 }
