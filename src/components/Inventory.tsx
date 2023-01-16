@@ -42,8 +42,8 @@ export default function Inventory(props: InventoryProps) {
                             <li>Philosophy</li>
                             <li>Sudoku</li>
                             <li>Algorithms</li>
-                            <li>Maskmaking (Venetian masks)</li>
                             <li>Painting</li>
+                            <li>Maskmaking (Venetian masks)</li>
                         </ul>
                     </div>
                 </>
