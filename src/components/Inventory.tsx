@@ -10,7 +10,7 @@ export default function Inventory(props: InventoryProps) {
             body: (
                 <>
                     <div>
-                        <div className="inventory-light-text">
+                        <div className="inventory-light-text inventory-section-with-border">
                             Major Skills (Course-Related)
                         </div>
                         <ul>
@@ -56,7 +56,7 @@ export default function Inventory(props: InventoryProps) {
         {
             title: 'Engraved Ring of Healing',
             body: (
-                <div className='inventory-light-text'>
+                <div className='inventory-light-text inventory-section-with-border'>
                     <div className='inventory-magic-section-flexbox'>
                         <div>Magic Items</div>
                         <div>Cost/Charge</div>

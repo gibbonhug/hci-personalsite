@@ -12,7 +12,6 @@
 
     .inventory-section {
         height: max-content;
-        background-color: purple;
 
         .inventory-section-title-group {
             display: flex;
@@ -34,7 +33,8 @@
 
             // map grows to fill its container
             img {
-                object-fit: fill;
+                width: 100%;
+                height: 100%;
             }
         }
     }
@@ -67,4 +67,5 @@
     .inventory-light-text {
         color: hsl(42, 61%, 69%);
     }
+
 }
