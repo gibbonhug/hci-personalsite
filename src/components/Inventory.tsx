@@ -34,16 +34,16 @@ export default function Inventory(props: InventoryProps) {
                             Misc Skills (Hobbies&Interests)
                         </div>
                         <ul>
-                            <li>Maskmaking (Venetian masks)</li>
-                            <li>Painting</li>
                             <li>Baking</li>
                             <li>Loose leaf tea</li>
                             <li>Tabletop games</li>
                             <li>Roguelike games</li>
+                            <li>Running</li>
                             <li>Philosophy</li>
                             <li>Sudoku</li>
                             <li>Algorithms</li>
-                            <li>Running</li>
+                            <li>Maskmaking (Venetian masks)</li>
+                            <li>Painting</li>
                         </ul>
                     </div>
                 </>
