@@ -40,5 +40,8 @@ export default function Inventory(props: InventoryProps) {
     );
     return <div id="inventory" className="mw">
         <InventorySection title={'Julian Willis'}></InventorySection>
+        <InventorySection title={'Aderhold Learning Center'}></InventorySection>
+        <InventorySection title={'Engraved Ring of Healing'}></InventorySection>
+
     </div>;
 }
