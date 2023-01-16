@@ -2,6 +2,22 @@
     font-size: 5rem;
 
     .inventory-section {
-
+        padding: 40px;
+        background-color: seagreen;
+        .inventory-section-title-group {
+            display: flex;
+            flex-direction: row;
+            background-color: teal;
+            
+            .inventory-section-title-texture {
+                background-image: url('/src/assets/texture.png');
+                background-repeat: repeat;
+                width: 100px;
+            }
+            
+            .inventory-section-title-text {
+                background-color: thistle;
+            }
+        }
     }
 }
