@@ -6,13 +6,14 @@
     height: 100vh;
 
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
+
+    grid-template-rows: 1fr 1fr;
 
     .inventory-section {
-        min-width: 750px;
-        max-width: 50%;
-
         height: max-content;
+        background-color: purple;
+
         .inventory-section-title-group {
             display: flex;
             
@@ -29,7 +30,6 @@
         }
 
         .inventory-section-content {
-    
             overflow: scroll;
 
             // map grows to fill its container
@@ -37,16 +37,30 @@
                 object-fit: fill;
             }
         }
+    }
 
-        // Specific sections
+    // Specific sections:
+
+    // Skills section
+    #inventory-section-1 {
+
+    }
+
+    // Map section
+    #inventory-section-2 {
+
+    }
+
+    // Magic items section
+    #inventory-section-3 {
+
         .inventory-magic-section-flexbox {
             display: flex;
             justify-content: space-between;
         }
+    }
 
-        .inventory-light-text {
-            color: hsl(42, 61%, 69%);
-        }
-
+    .inventory-light-text {
+        color: hsl(42, 61%, 69%);
     }
 }

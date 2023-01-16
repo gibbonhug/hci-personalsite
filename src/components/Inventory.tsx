@@ -74,7 +74,7 @@ export default function Inventory(props: InventoryProps) {
         <div id="inventory">
             <InventorySection content={sections[0]} id={"inventory-section-1"}></InventorySection>
             <InventorySection content={sections[1]} id={"inventory-section-2"}></InventorySection>
-            <InventorySection content={sections[2]} id={"inventory-section-3"}></InventorySection>
+            <InventorySection content={sections[2]} id={""}></InventorySection>
         </div>
     );
 }
