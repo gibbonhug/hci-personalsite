@@ -138,7 +138,7 @@ table {
   background-color: rgba(0, 0, 0, 0.75);
   height: 100vh;
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr min-content;
   grid-template-rows: 1fr 1fr 1fr;
 }
 #inventory .inventory-section {
@@ -163,11 +163,7 @@ table {
   border-color: hsl(42deg, 38%, 51%);
   outline-style: solid;
   outline-width: 0.25rem;
-  outline-color: hsl(0deg, 0%, 0%);
-}
-#inventory .inventory-section .inventory-section-content img {
-  width: 100%;
-  height: 100%;
+  outline-color: black;
 }
 #inventory #inventory-section-1 {
   grid-column: 1/2;
@@ -177,9 +173,13 @@ table {
   grid-column: 3/4;
   grid-row: 1/2;
 }
+#inventory #inventory-section-2 .inventory-section-content {
+  display: flex;
+  justify-content: center;
+}
 #inventory #inventory-section-3 {
   grid-column: 3/4;
-  grid-row: 3/4;
+  grid-row: 2/3;
 }
 #inventory #inventory-section-3 .inventory-magic-section-flexbox {
   display: flex;
