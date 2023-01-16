@@ -4,8 +4,6 @@
     .inventory-section {
         .inventory-section-title-group {
             display: flex;
-            flex-direction: row;
-            background-color: teal; // this should not be visible
             
             .inventory-section-title-texture {
                 background-image: url('/src/assets/texture.png');
@@ -14,8 +12,8 @@
             }
             
             .inventory-section-title-text {
-                background-color: thistle;
                 flex-grow: 0;
+                padding: 0.5rem 2rem; // black space on sides of title text
             }
         }
 

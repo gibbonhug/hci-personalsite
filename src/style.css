@@ -138,8 +138,6 @@ table {
 }
 #inventory .inventory-section .inventory-section-title-group {
   display: flex;
-  flex-direction: row;
-  background-color: teal;
 }
 #inventory .inventory-section .inventory-section-title-group .inventory-section-title-texture {
   background-image: url("/src/assets/texture.png");
@@ -147,8 +145,8 @@ table {
   flex-grow: 1;
 }
 #inventory .inventory-section .inventory-section-title-group .inventory-section-title-text {
-  background-color: thistle;
   flex-grow: 0;
+  padding: 0.5rem 2rem;
 }
 #inventory .inventory-section .inventory-section-content {
   height: 100px;
