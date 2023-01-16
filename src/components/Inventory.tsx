@@ -8,11 +8,11 @@ export default function Inventory(props: InventoryProps) {
         {
             title: 'Julian Willis',
             body: (
-                <>
+                <div className='inventory-section-inner-box'>
                     <div>
-                        <div className="inventory-light-text inventory-section-with-border">
+                        <h3 className="inventory-light-text ">
                             Major Skills (Course-Related)
-                        </div>
+                        </h3>
                         <ul>
                             <li>React.js</li>
                             <li>CSS</li>
@@ -20,19 +20,21 @@ export default function Inventory(props: InventoryProps) {
                             <li>Technical documentation</li>
                         </ul>
                     </div>
+                    <hr></hr>
                     <div>
-                        <div className="inventory-light-text">
+                        <h3 className="inventory-light-text">
                             Minor Skills (Course-Related)
-                        </div>
+                        </h3>
                         <ul>
                             <li>Graphic Design</li>
                             <li>Typography</li>
                         </ul>
                     </div>
+                    <hr></hr>
                     <div>
-                        <div className="inventory-light-text">
+                        <h3 className="inventory-light-text">
                             Misc Skills (Hobbies&Interests)
-                        </div>
+                        </h3>
                         <ul>
                             <li>Baking</li>
                             <li>Loose leaf tea</li>
@@ -46,7 +48,7 @@ export default function Inventory(props: InventoryProps) {
                             <li>Maskmaking (Venetian masks)</li>
                         </ul>
                     </div>
-                </>
+                </div>
             ),
         },
         {
@@ -56,13 +58,13 @@ export default function Inventory(props: InventoryProps) {
         {
             title: 'Engraved Ring of Healing',
             body: (
-                <div className='inventory-light-text inventory-section-with-border'>
-                    <div className='inventory-magic-section-flexbox'>
+                <div className="inventory-light-text inventory-section-inner-box">
+                    <div className="inventory-magic-section-flexbox">
                         <div>Magic Items</div>
                         <div>Cost/Charge</div>
                     </div>
                     <hr></hr>
-                    <div className='inventory-magic-section-flexbox'>
+                    <div className="inventory-magic-section-flexbox">
                         <div>Engraved Ring of Healing</div>
                         <div>5/20</div>
                     </div>
@@ -73,9 +75,18 @@ export default function Inventory(props: InventoryProps) {
 
     return (
         <div id="inventory">
-            <InventorySection content={sections[0]} id={"inventory-section-1"}></InventorySection>
-            <InventorySection content={sections[1]} id={"inventory-section-2"}></InventorySection>
-            <InventorySection content={sections[2]} id={"inventory-section-3"}></InventorySection>
+            <InventorySection
+                content={sections[0]}
+                id={'inventory-section-1'}
+            ></InventorySection>
+            <InventorySection
+                content={sections[1]}
+                id={'inventory-section-2'}
+            ></InventorySection>
+            <InventorySection
+                content={sections[2]}
+                id={'inventory-section-3'}
+            ></InventorySection>
         </div>
     );
 }
