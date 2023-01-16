@@ -149,7 +149,7 @@ table {
   padding: 0.5rem 2rem;
 }
 #inventory .inventory-section .inventory-section-content {
-  height: 100px;
+  overflow: scroll;
 }
 
 /*# sourceMappingURL=style.css.map */
